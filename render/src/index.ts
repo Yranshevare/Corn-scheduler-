@@ -12,7 +12,7 @@ app.get("/ping", async(c) => {
     console.log("ping");
     setTimeout(() => {
         const res = fetch(`${process.env.VERCEL_URL}/`);
-    }, 1000);       // render downtime
+    }, Number(process.env.RENDER_DOWNTIME) || 1500);       // render downtime
     return c.json({ message: "pong" });
 });
 
