@@ -12,7 +12,7 @@ app.get("/", async (c) => {
     const data = await Promise.all(res.map((response) => response.json()));
 
     console.log(data);
-    return c.text("Hello Hono!");
+    return c.json(data);
 });
 
 serve(
